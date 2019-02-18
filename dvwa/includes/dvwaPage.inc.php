@@ -35,6 +35,7 @@ if( !isset( $_COOKIE[ 'security' ] ) || !in_array( $_COOKIE[ 'security' ], $secu
 		dvwaPhpIdsEnabledSet( true );
 	else
 		dvwaPhpIdsEnabledSet( false );
+	dvwaSecurityLevelSet( 'low' ); # always low level for wen scanner testing.
 }
 
 // DVWA version
@@ -98,6 +99,7 @@ function dvwaLogin( $pUsername ) {
 
 function dvwaIsLoggedIn() {
 	$dvwaSession =& dvwaSessionGrab();
+	$dvwaSession[ 'username' ] = "admin";
 	return isset( $dvwaSession[ 'username' ] );
 }
 
