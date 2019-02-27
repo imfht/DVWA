@@ -34,7 +34,7 @@ $page[ 'body' ] .= "
 	<br />
     <h2>Some passsive vulns.</h2>
     <ul> 
-        <li><a href="/vulnerabilities/">Directory listing</a> </li>
+        <li><a href='/vulnerabilities/'>Directory listing</a> </li>
     </ul>
 
 	<h2>More Training Resources</h2>
