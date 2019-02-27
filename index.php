@@ -32,6 +32,10 @@ $page[ 'body' ] .= "
 	<p>We do not take responsibility for the way in which any one uses this application (DVWA). We have made the purposes of the application clear and it should not be used maliciously. We have given warnings and taken measures to prevent users from installing DVWA on to live web servers. If your web server is compromised via an installation of DVWA it is not our responsibility it is the responsibility of the person/s who uploaded and installed it.</p>
 	<hr />
 	<br />
+    <h2>Some passsive vulns.</>
+    <ul> 
+        <li><a href="/vulnerabilities/">Directory listing</a> </li>
+    </ul>
 
 	<h2>More Training Resources</h2>
 	<p>DVWA aims to cover the most commonly seen vulnerabilities found in today's web applications. However there are plenty of other issues with web applications. Should you wish to explore any additional attack vectors, or want more difficult challenges, you may wish to look into the following other projects:</p>
