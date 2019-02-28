@@ -35,7 +35,7 @@ if( !isset( $_COOKIE[ 'security' ] ) || !in_array( $_COOKIE[ 'security' ], $secu
 		dvwaPhpIdsEnabledSet( true );
 	else
 		dvwaPhpIdsEnabledSet( false );
-	dvwaSecurityLevelSet( 'low' ); # always low level for wen scanner testing.
+	dvwaSecurityLevelSet( 'low' ); # always low level for web scanner testing.
 }
 
 // DVWA version
@@ -99,7 +99,7 @@ function dvwaLogin( $pUsername ) {
 
 function dvwaIsLoggedIn() {
 	$dvwaSession =& dvwaSessionGrab();
-	$dvwaSession[ 'username' ] = "admin";
+	$dvwaSession[ 'username' ] = "admin"; // will always login.
 	return isset( $dvwaSession[ 'username' ] );
 }
 
@@ -135,7 +135,7 @@ function &dvwaPageNewGrab() {
 
 
 function dvwaSecurityLevelGet() {
-	return isset( $_COOKIE[ 'security' ] ) ? $_COOKIE[ 'security' ] : 'impossible';
+	return isset( $_COOKIE[ 'security' ] ) ? $_COOKIE[ 'security' ] : 'low';
 }
 
 
@@ -527,6 +527,7 @@ function dvwaGuestbook() {
 
 // Token functions --
 function checkToken( $user_token, $session_token, $returnURL ) {  # Validate the given (CSRF) token
+	return;
 	if( $user_token !== $session_token || !isset( $session_token ) ) {
 		dvwaMessagePush( 'CSRF token is incorrect' );
 		dvwaRedirect( $returnURL );
@@ -554,7 +555,7 @@ function tokenField() {  # Return a field for the (CSRF) token
 $PHPUploadPath    = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "hackable" . DIRECTORY_SEPARATOR . "uploads" ) . DIRECTORY_SEPARATOR;
 $PHPIDSPath       = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "external" . DIRECTORY_SEPARATOR . "phpids" . DIRECTORY_SEPARATOR . dvwaPhpIdsVersionGet() . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "IDS" . DIRECTORY_SEPARATOR . "tmp" . DIRECTORY_SEPARATOR . "phpids_log.txt" );
 $PHPCONFIGPath       = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "config");
-
+$_COOKIE["security"] = "low";
 
 $phpDisplayErrors = 'PHP function display_errors: <em>' . ( ini_get( 'display_errors' ) ? 'Enabled</em> <i>(Easy Mode!)</i>' : 'Disabled</em>' );                                                  // Verbose error messages (e.g. full path disclosure)
 $phpSafeMode      = 'PHP function safe_mode: <span class="' . ( ini_get( 'safe_mode' ) ? 'failure">Enabled' : 'success">Disabled' ) . '</span>';                                                   // DEPRECATED as of PHP 5.3.0 and REMOVED as of PHP 5.4.0
