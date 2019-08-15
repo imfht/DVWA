@@ -94,4 +94,4 @@ dvwaMessagePush( "Backup file /config/config.inc.php.bak automatically created" 
 
 // Done
 dvwaMessagePush( "<em>Setup successful</em>!" );
-exit("okay")
+exit("okay");
