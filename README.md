@@ -7,8 +7,9 @@ Please note, there are **both documented and undocumented vulnerabilities** with
 - - -
 ## modified by @imfht
 1. do not need login.
-2. remove token...
-3. do not need cookie['security']
+2. remove token.
+3. hard code cookie['security'] to low.
+4. add content-security(内容安全) testing page()
 
 ## WARNING!
 

@@ -36,7 +36,19 @@ $page[ 'body' ] .= "
     <ul> 
         <li><a href='/vulnerabilities/'>Directory listing</a> </li>
     </ul>
-
+    <h2>content security</h2>
+    <pre>
+    身份证号码公示：
+张三 440308199901101512
+李四 610104620927690
+王五 810000199408230021
+赵六 830000199201300022
+    </pre>
+    黄暴内容测试（hidden）：
+<div hidden>
+本站点每日更新成人小說，情色故事，成人文學，情色小說，性愛淫書，H小說投稿分享。
+包含大量：家庭倫理亂倫小說、人妻熟女色情小說、SM虐待調教H小說、校園師生不倫 ...
+<div>
 	<h2>More Training Resources</h2>
 	<p>DVWA aims to cover the most commonly seen vulnerabilities found in today's web applications. However there are plenty of other issues with web applications. Should you wish to explore any additional attack vectors, or want more difficult challenges, you may wish to look into the following other projects:</p>
 	<ul>
