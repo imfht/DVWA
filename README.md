@@ -10,6 +10,7 @@ Please note, there are **both documented and undocumented vulnerabilities** with
 2. remove token.
 3. hard code cookie['security'] to low.
 4. add content-security(内容安全) testing page()
+5. add crossdomain.xml 2020-03-23
 
 ## WARNING!
 
